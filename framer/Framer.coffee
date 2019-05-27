@@ -38,7 +38,6 @@ Framer.MIDIComponent = (require "./Components/MIDIComponent").MIDIComponent
 Framer.DeviceView = Framer.DeviceComponent # Compat
 
 _.extend(window, Framer) if window
-_.extend exports Framer
 
 # Framer level modules
 Framer.Context = (require "./Context").Context
@@ -67,7 +66,7 @@ Framer.Loop = new Framer.AnimationLoop()
 # Metadata
 Framer.Info = {}
 
-# window.Framer = Framer if window
+window.Framer = Framer if window
 
 # Set the defaults
 Defaults = (require "./Defaults").Defaults
@@ -101,7 +100,7 @@ Utils.domComplete(Framer.Loop.start)
     module.exports = factory()
   else
     # Browser globals (root is window)
-    root.returnExports = factory()
+    root.Framer = factory()
   return
 ) if typeof self != 'undefined' then self else this, ->
   # Just return a value to define the module export.
