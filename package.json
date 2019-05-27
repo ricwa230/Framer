@@ -2,13 +2,14 @@
   "name": "framerjs",
   "version": "3.0.0",
   "description": "Modern Prototyping Framework",
-  "main": "lib/Framer.js",
+  "main": "build/framer.js",
   "directories": {
     "doc": "docs",
     "test": "test"
   },
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "postinstall": "make release"
   },
   "repository": {
     "type": "git",

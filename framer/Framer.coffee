@@ -38,6 +38,7 @@ Framer.MIDIComponent = (require "./Components/MIDIComponent").MIDIComponent
 Framer.DeviceView = Framer.DeviceComponent # Compat
 
 _.extend(window, Framer) if window
+_.extend exports Framer
 
 # Framer level modules
 Framer.Context = (require "./Context").Context
